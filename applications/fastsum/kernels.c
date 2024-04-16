@@ -441,7 +441,7 @@ C der_laplacian_rbf(R x, int der, const R *param)    /* K(x)=|x|/c EXP(-|x|/c) *
     case  0 : value = (FABS(x)/c)*EXP(-FABS(x)/c); break;
     default:
         value = (POW(K(-1.0),(R)der))*((FABS(x)-(R)der*c)/POW(c,(R)der+1))*EXP(-FABS(x)/c);
-        value *= 1 - 2 * ((x < K(0.0)) && (der % 2.0));
+        value *= 1 - 2 * ((x < K(0.0)) && (der % 2));
   }
 
   return value;
